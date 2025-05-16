@@ -3,13 +3,24 @@
 Projeto de backend desenvolvido para consulta de informações climáticas em tempo real usando dados da API pública OpenWeather.
 
 ## 👥 Integrantes
-
 - Evandro Luiz
 - Abdiel Paulino
 
 ## 🎯 Descrição
 
 O serviço web permite consultar a previsão atual do tempo em qualquer cidade do mundo, além de registrar um histórico local de consultas feitas. O sistema também possui uma rota para verificar a data e hora atual do servidor (em tempo real).
+
+A API retorna dados meteorológicos completos, como:
+
+- Temperatura atual (°C)
+- Sensação térmica
+- Umidade (%)
+- Velocidade do vento (m/s)
+- Pressão atmosférica (hPa)
+- Temperatura mínima e máxima
+- Horário do nascer e pôr do sol
+- Descrição do clima
+- Nome da cidade
 
 ## 💻 Tecnologias utilizadas
 
@@ -52,10 +63,20 @@ GET http://localhost:8000/weather?city=Sao Paulo
 ```json
 {
   "cidade": "São Paulo",
-  "temperatura": 23.4,
-  "descricao": "céu limpo"
+  "temperatura": "23.4 °C",
+  "descricao": "céu limpo",
+  "umidade": "64 %",
+  "velocidade_vento": "3.5 m/s",
+  "sensacao_termica": "22.8 °C",
+  "temp_min": "20.0 °C",
+  "temp_max": "26.0 °C",
+  "pressao": "1012 hPa",
+  "nascer_do_sol": "06:13",
+  "por_do_sol": "17:47"
 }
 ```
+
+---
 
 ### `POST /weather`
 
@@ -68,9 +89,13 @@ Consulta o clima da cidade informada via corpo da requisição.
 }
 ```
 
+---
+
 ### `GET /consultas`
 
 Retorna a lista de todas as cidades que já foram consultadas.
+
+---
 
 ### `GET /sobre`
 
@@ -84,6 +109,8 @@ Retorna informações da equipe e do projeto.
 }
 ```
 
+---
+
 ### `GET /hora`
 
 Retorna a data e hora atual do servidor.
@@ -95,10 +122,13 @@ Retorna a data e hora atual do servidor.
 }
 ```
 
+---
+
 ## 📋 Observações
 
 - A chave da OpenWeather é obrigatória para funcionamento do projeto.
 - As consultas são feitas em tempo real diretamente da API pública.
+- Todas as unidades de medida foram formatadas no retorno para facilitar a leitura (°C, %, m/s, etc.).
 
 ## 📚 Licença
 
