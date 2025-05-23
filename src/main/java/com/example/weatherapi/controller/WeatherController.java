@@ -27,12 +27,12 @@ public class WeatherController {
         return weatherService.getWeather(city);
     }
 
-    @GetMapping("/consultas")
+    @GetMapping("/queries") // antes era /consultas
     public List<String> getConsultas() {
         return cidadesConsultadas;
     }
 
-    @GetMapping("/sobre")
+    @GetMapping("/about") // antes era /sobre
     public Map<String, Object> sobre() {
         return Map.of(
             "integrantes", List.of("Evandro Luiz", "Abdiel Paulino"),
@@ -40,10 +40,8 @@ public class WeatherController {
         );
     }
 
-
-    @GetMapping("/hora")
+    @GetMapping("/time") // antes era /hora
     public Map<String, String> getHoraAtual() {
         return Map.of("horaAtual", java.time.LocalDateTime.now().toString());
     }
-
 }

@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WeatherService {
 
-    private final String apiKey = "API_KEY";
+    private final String apiKey = "a654c340ca046ad911f2445fe2d7e4dc";
 
     public Map<String, Object> getWeather(String city) {
         try {
