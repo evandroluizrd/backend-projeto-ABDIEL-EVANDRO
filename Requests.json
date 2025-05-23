@@ -1,0 +1,102 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-05-23T15:30:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2025.1.0",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "Weather API Workspace",
+      "scope": "collection",
+      "parentId": null
+    },
+    {
+      "_id": "env_1",
+      "_type": "environment",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8000",
+        "jwt_token": ""
+      },
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_1",
+      "_type": "request",
+      "name": "Consultar Clima",
+      "method": "GET",
+      "url": "{{ base_url }}/weather?city=São Paulo",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{jwt_token}}"
+        }
+      ],
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_2",
+      "_type": "request",
+      "name": "Ver Histórico de Clima",
+      "method": "GET",
+      "url": "{{ base_url }}/queries",
+      "headers": [],
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_3",
+      "_type": "request",
+      "name": "Listar Favoritos",
+      "method": "GET",
+      "url": "{{ base_url }}/favorites",
+      "headers": [],
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_4",
+      "_type": "request",
+      "name": "Criar Favorito",
+      "method": "POST",
+      "url": "{{ base_url }}/favorites",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"cidade\": \"São Paulo\"}"
+      },
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_5",
+      "_type": "request",
+      "name": "Remover Favorito (id 1)",
+      "method": "DELETE",
+      "url": "{{ base_url }}/favorites/1",
+      "headers": [],
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_6",
+      "_type": "request",
+      "name": "Login",
+      "method": "POST",
+      "url": "{{ base_url }}/auth/login",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"email\": \"admin@email.com\", \"senha\": \"123456\"}"
+      },
+      "parentId": "wrk_1"
+    }
+  ]
+}
