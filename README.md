@@ -1,4 +1,4 @@
-# Weather API - Serviço de Meteorologia
+[# Weather API - Serviço de Meteorologia
 
 Projeto backend para consulta de informações climáticas em tempo real utilizando dados da API pública OpenWeather.
 
@@ -88,4 +88,4 @@ Consultas meteorológicas são feitas em tempo real via API pública.
 Endpoint de favoritos retorna apenas lista simples para otimizar performance.
 
 Licença
-Projeto acadêmico com fins exclusivamente educacionais.
+Projeto acadêmico com fins exclusivamente educacionais.](https://github.com/evandroluizrd/backend-projeto-ABDIEL-EVANDRO.git)
